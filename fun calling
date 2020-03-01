@@ -1,0 +1,70 @@
+import React, {Component} from 'react';
+
+import {StyleSheet, Text, View, Button, Alert} from 'react-native';
+
+export default class App extends Component<{}> {
+  SampleFunction1() {
+    Alert.alert('Function Without Argument');
+  }
+
+  SampleFunction2(StringHolder) {
+    Alert.alert(StringHolder);
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={{margin: 10}}>
+          <Button
+            onPress={this.SampleFunction1.bind(this)}
+            title=" Click Here To  Function - 1 "
+          />
+        </View>
+
+        <View style={{margin: 10}}>
+          <Button
+            onPress={this.SampleFunction2.bind(
+              this,
+              'Function With Argument Text',
+            )}
+            title=" Click Here To Call Function - 2 "
+          />
+        </View>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+
+    margin: 60,
+  },
+});
+
+
+
+
+import React, {Component} from 'react';
+
+import {StyleSheet, Text, View, Button, Alert, TextInput} from 'react-native';
+
+export default class App extends Component<{}> {
+  render() {
+    return (
+      <View style={{width: 370, padding: 20}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <TextInput
+            placeholder="my Goals"
+            style={{width: 250, borderColor: 'black', borderWidth: 1}}
+          />
+          <Button title="ADD" />
+        </View>
+      </View>
+    );
+  }
+}
+
+
